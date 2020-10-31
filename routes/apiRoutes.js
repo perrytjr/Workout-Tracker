@@ -31,11 +31,13 @@ module.exports = function (app) {
       });
   });
 
+  app.put("/api/workouts/:id", function ({body, params}, res) {
 
-  app.put("/api/workouts/:id ", ({ body }, res) => {
-    
-    Workout.update(body)
-      .then(({ _id }) => Workout.findOneAndUpdate({}, { $push: { exercises: _id } }, { new: true }))
+    Workout.findByIdAndUpdate(
+    params.id,
+    { $push: { exercises: body } },
+    { new: true }
+  )
       .then(data =>
 
         res.json(data))
@@ -43,5 +45,6 @@ module.exports = function (app) {
         res.json(err);
       })
   });
+ 
 
 }
