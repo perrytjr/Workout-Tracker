@@ -42,10 +42,16 @@ const workoutSchema = new Schema(
          
         }
       ]
+    });
+
+
+    workoutSchema.methods.setDuration = function() {
+      this.update = `${this.duration}`;
     
-});
+      return this.update;
+    
+    };
   
   const Workout = mongoose.model("Workout", workoutSchema);
 
   module.exports = Workout;
-  
