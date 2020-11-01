@@ -11,7 +11,7 @@ This application, Workout-Tracker will allow a user to be able to view, create, 
 
 
 ## How it functions
- This application uses Javascript, Express, Node.js, MongoDB, and deployed via Heroku. 
+ This application uses Express, Node.js, MongoDB with Mongoose, and deployed via Heroku. 
 
 ## Credits
 [Matthew Rodgers](https://github.com/Rogers-Development-Services)
